@@ -2,7 +2,7 @@ export HOMEBREW=$(brew --prefix)
 export GEMSBIN=~/.gem/ruby/1.8/bin
 export PREFIX=$HOMEBREW
 
-export PATH=$PATH:$GEMSBIN:$HOMEBREW
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$GEMSBIN:$HOMEBREW
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return

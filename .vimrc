@@ -19,6 +19,8 @@ set softtabstop=4
 set guifont=Courier_New:h9
 set backupdir=~/.vimbackup
 
+call pathogen#runtime_append_all_bundles()
+
 syntax on
 filetype plugin indent on
 autocmd FileType text setlocal textwidth=78
