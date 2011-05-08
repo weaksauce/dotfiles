@@ -1,3 +1,7 @@
 [user]
 	name = Folke Lemaitre
 	email = folke@engagor.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
