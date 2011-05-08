@@ -1,0 +1,5 @@
+--langdef=planr
+--langmap=planr:.planr
+--regex-planr=/^\[(.*)\]$/|--\1/h,heading/
+--regex-planr=/^(\t| {4}){1}\[(.*)\]$/|    |--\2/h,subheading/
+--regex-planr=/^(\t| {4}){2}\[(.*)\]$/|         |--\2/h,subsubheading/
