@@ -18,6 +18,10 @@ set softtabstop=4
 
 set guifont=Courier_New:h9
 set backupdir=~/.vimbackup
+set background=dark
+colorscheme molokai
+
+set t_Co=256
 
 call pathogen#runtime_append_all_bundles()
 

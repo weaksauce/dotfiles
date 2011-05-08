@@ -1,0 +1,1 @@
+: call delete('/Users/folke/.vim/bundle/delimitMate/plugin/delimitMate.vim')|call delete('/Users/folke/.vim/bundle/delimitMate/autoload/delimitMate.vim')|call delete('/Users/folke/.vim/bundle/delimitMate/doc/delimitMate.txt')
