@@ -53,6 +53,9 @@ nmap <silent> <F2> :TlistToggle<CR>
 " NERDTree config
 nmap <silent> <F3> :NERDTreeToggle<CR>
 
+" pasting that doesnt suck
+imap <D-v> <C-O>:set paste<CR><C-r>*<C-O>:set nopaste<CR>
+
 " Better mapping for next/prev tabs
 map <silent><A-Right> :tabnext<CR>
 map <silent><A-Left> :tabprevious<CR>
