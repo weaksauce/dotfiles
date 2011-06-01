@@ -97,3 +97,5 @@ fi
 if [ -f $PREFIX/etc/bash_completion ]; then
     . $PREFIX/etc/bash_completion
 fi
+
+[ -e /Applications/MacVim.app/Contents/MacOS/Vim ] && alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'

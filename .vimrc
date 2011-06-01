@@ -15,10 +15,14 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
+set smarttab
+set showmatch
 
 set guifont=Courier_New:h9
 set backupdir=~/.vimbackup
 set background=dark
+let mapleader = ","
+set wildignore=.git,.svn
 colorscheme molokai
 
 set t_Co=256
@@ -38,43 +42,24 @@ autocmd BufReadPost *
 
 " Taglist config
 let Tlist_Inc_Winwidth = 1
-let Tlist_Exit_OnlyWindow = 1
 let Tlist_Process_File_Always = 1
 let Tlist_Enable_Fold_Column = 0
-let Tlist_Use_Right_Window=1
 let Tlist_Auto_Update=1
 let Tlist_Highlight_Tag_On_BufEnter=1
 let Tlist_Show_One_File=1
 let tlist_php_settings = 'php;c:class;d:constant;f:function'
 let tlist_planr_settings = 'planr;h:heading'
-nmap <silent> <F2> :TlistToggle<CR>
-"autocmd FileType php :TlistToggle
-
-" NERDTree config
-nmap <silent> <F3> :NERDTreeToggle<CR>
+let Tlist_Show_Menu=1
+let Tlist_GainFocus_On_ToggleOpen=1
+let Tlist_Close_On_Select=1
+let Tlist_Compact_Format=1
 
 " pasting that doesnt suck
 imap <D-v> <C-O>:set paste<CR><C-r>*<C-O>:set nopaste<CR>
 
-" Better mapping for next/prev tabs
-map <silent><A-Right> :tabnext<CR>
-map <silent><A-Left> :tabprevious<CR>
 
 " custom filetypes
 au BufRead,BufNewFile *.plan set filetype=planr
-
-command! -nargs=0 -bar Todo
-    \ exe "edit c:\\projects\\engagor\\todo.plan" |
-    \ exe "NERDTreeToggle c:\\projects\\engagor" |
-    \ exe "TlistOpen" |
-    \ exe "2wincmd w"
-
-command! -nargs=0 -bar Projects
-    \ exe "edit /home/folke/notes/projects.plan" |
-    \ exe "NERDTreeToggle /home/folke/notes" |
-    \ exe "TlistOpen" |
-    \ exe "2wincmd w"
-
 
 set splitright
 
@@ -84,3 +69,30 @@ runtime ftplugin/changelog.vim
 au FileType html,xhtml setlocal indentexpr= 
 au FileType html,xhtml setlocal autoindent
 au FileType html,xhtml setlocal smartindent
+
+filetype plugin on
+au FileType php set omnifunc=phpcomplete#CompletePHP
+let php_sql_query=1                                                                                        
+let php_htmlInStrings=1
+set completeopt=longest,menuone,preview
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ "\<lt>C-n>" :
+            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
+map <silent><Leader><Right> :tabnext<CR>
+map <silent><Leader><Left> :tabprevious<CR>
+nmap <silent> <leader>r :TlistToggle<CR>
+nmap <unique> <silent> <Leader>t :tabnew<CR>:CommandT<CR>
+map <leader>f :Ack<space>
+nmap <silent> <leader>b :NERDTreeToggle<CR>
+
+function! CleverTab()
+   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+   else
+      return "\<C-X>\<C-O>"
+   endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
