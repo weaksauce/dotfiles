@@ -106,15 +106,11 @@ if [ -f $PREFIX/etc/bash_completion ]; then
     . $PREFIX/etc/bash_completion
 fi
 
-if isexe 'ack-grep'; then
-    alias ack='ack-grep'
-fi
-
-alias s='ack'
-alias sphp='ack --php'
-alias shtml='ack --html'
-alias sjs='ack --js'
-alias scss='ack --css'
-alias ssass='ack --sass'
+alias s='ack-grep'
+alias sphp='ack-grep --php'
+alias shtml='ack-grep --html'
+alias sjs='ack-grep --js'
+alias scss='ack-grep --css'
+alias ssass='ack-grep --sass'
 [ -e /Applications/MacVim.app/Contents/MacOS/Vim ] && alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 

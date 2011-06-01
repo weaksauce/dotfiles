@@ -23,7 +23,9 @@ set backupdir=~/.vimbackup
 set background=dark
 let mapleader = ","
 set wildignore=.git,.svn
-colorscheme molokai
+"colorscheme molokai
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+colorscheme railscasts
 
 set t_Co=256
 
