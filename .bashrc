@@ -1,8 +1,12 @@
-export HOMEBREW=$(brew --prefix)
-export GEMSBIN=~/.gem/ruby/1.8/bin
-export PREFIX=$HOMEBREW
+export GEMSBIN=~/.gem/ruby/1.8/bin:/var/lib/gems/1.8/bin
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$GEMSBIN
+export PREFIX=""
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$GEMSBIN:$HOMEBREW
+if [ -x brew ] ; then
+    export HOMEBREW=$(brew --prefix)
+    export PREFIX=$HOMEBREW
+    export PATH=$PATH:$HOMEBREW
+fi
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -97,3 +101,10 @@ fi
 if [ -f $PREFIX/etc/bash_completion ]; then
     . $PREFIX/etc/bash_completion
 fi
+
+alias s='ack-grep'
+alias sphp='ack-grep --php'
+alias shtml='ack-grep --html'
+alias sjs='ack-grep --js'
+alias scss='ack-grep --css'
+alias ssass='ack-grep --sass'
