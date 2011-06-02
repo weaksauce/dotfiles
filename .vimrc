@@ -62,6 +62,7 @@ imap <D-v> <C-O>:set paste<CR><C-r>*<C-O>:set nopaste<CR>
 
 " custom filetypes
 au BufRead,BufNewFile *.plan set filetype=planr
+au BufRead,BufNewFile *.json set filetype=json
 
 set splitright
 
@@ -97,4 +98,4 @@ function! CleverTab()
       return "\<C-X>\<C-O>"
    endif
 endfunction
-inoremap <Tab> <C-R>=CleverTab()<CR>
+"inoremap <Tab> <C-R>=CleverTab()<CR>
