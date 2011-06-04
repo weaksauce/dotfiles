@@ -118,3 +118,5 @@ alias scss='ack-grep --css'
 alias ssass='ack-grep --sass'
 [ -e /Applications/MacVim.app/Contents/MacOS/Vim ] && alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
+alias json="python -mjson.tool"
+
