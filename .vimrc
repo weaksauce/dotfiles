@@ -78,12 +78,19 @@ au FileType php set omnifunc=phpcomplete#CompletePHP
 let php_sql_query=1                                                                                        
 let php_htmlInStrings=1
 set completeopt=longest,menuone,preview
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-            \ "\<lt>C-n>" :
-            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <C-Space> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
 imap <C-@> <C-Space>
+
+let g:user_zen_expandabbr_key = '<C-e>'
+let g:use_zen_complete_tag = 1
+
 map <silent><Leader><Right> :tabnext<CR>
 map <silent><Leader><Left> :tabprevious<CR>
 nmap <silent> <leader>r :TlistToggle<CR>
