@@ -65,6 +65,7 @@ imap <D-v> <C-O>:set paste<CR><C-r>*<C-O>:set nopaste<CR>
 au BufRead,BufNewFile *.plan set filetype=planr
 au BufRead,BufNewFile *.todo set filetype=planr
 au BufRead,BufNewFile *.json set filetype=json
+au BufRead,BufNewFile *.md set filetype=markdown
 
 set splitright
 
@@ -93,6 +94,7 @@ imap <C-@> <C-Space>
 let g:user_zen_expandabbr_key = '<C-e>'
 let g:use_zen_complete_tag = 1
 
+map <leader>s :!./sync<CR>
 map <silent><Leader><Right> :tabnext<CR>
 map <silent><Leader><Left> :tabprevious<CR>
 nmap <silent> <leader>r :TlistToggle<CR>
