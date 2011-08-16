@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/data/code/engagor/lib/php-amqplib'
 let g:netrw_dirhist_2='/data/elasticsearch/config'
 let g:netrw_dirhist_3='/Users/folke/Projects/gollum/templates'
+let g:netrw_dirhist_4='/Users/folke/.vim/bundle/minibufexpl.vim'
+let g:netrw_dirhist_5='/Users/folke/Projects/engagor/app/global/css'
+let g:netrw_dirhist_6='/Users/folke/.vim/bundle/minibufexpl.vim'
+let g:netrw_dirhist_7='/Users/folke/.vim/bundle/vim-colors-solarized'

@@ -117,6 +117,8 @@ alias sjs='ack-grep --js'
 alias scss='ack-grep --css'
 alias ssass='ack-grep --sass'
 [ -e /Applications/MacVim.app/Contents/MacOS/Vim ] && alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vi=vim
 
 alias json="python -mjson.tool"
 
+unset LC_CTYPE

@@ -5,6 +5,8 @@ set history=50          " keep 50 lines of command line history
 set ruler               " show the cursor position all the time
 set nu                  " Enable Line Numbering
 set showcmd             " display incomplete commands
+set hidden
+set tags+=tags;/
 
 set incsearch           " do incremental searching
 set hlsearch            " switch on highlighting the last used search pattern
@@ -22,10 +24,12 @@ set guifont=Courier_New:h9
 set backupdir=~/.vimbackup
 set background=dark
 let mapleader = ","
+"set mouse=a
 set wildignore=.git,.svn
 "colorscheme molokai
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 colorscheme railscasts
+
 
 set t_Co=256
 
@@ -75,9 +79,11 @@ runtime ftplugin/changelog.vim
 au FileType html,xhtml setlocal indentexpr= 
 au FileType html,xhtml setlocal autoindent
 au FileType html,xhtml setlocal smartindent
+au FileType css,scss ColorHighlight
 
 filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
+au FileType php set keywordprg=pman
 let php_sql_query=1                                                                                        
 let php_htmlInStrings=1
 set completeopt=longest,menuone,preview
@@ -95,12 +101,19 @@ let g:user_zen_expandabbr_key = '<C-e>'
 let g:use_zen_complete_tag = 1
 
 map <leader>s :!./sync<CR>
-map <silent><Leader><Right> :tabnext<CR>
-map <silent><Leader><Left> :tabprevious<CR>
+se switchbuf=useopen
+map <silent><S-right>   :bn<cr>
+map <silent><S-left>    :bp<cr>
+imap <silent><S-right>   <esc>:bn<cr>
+imap <silent><S-left>    <esc>:bp<cr>
+let g:miniBufExplShowBufNumbers = 0
+let g:miniBufExplForceSyntaxEnable = 0
+let g:miniBufExplorerMoreThanOne=0
+
 nmap <silent> <leader>r :TlistToggle<CR>
-nmap <unique> <silent> <Leader>t :tabnew<CR>:CommandT<CR>
+"nmap <unique> <silent> <Leader>t :tabnew<CR>:CommandT<CR>
 map <leader>f :Ack<space>
-nmap <silent> <leader>b :NERDTreeToggle<CR>
+"nmap <silent> <leader>b :NERDTreeToggle<CR>
 
 function! CleverTab()
    if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
@@ -109,7 +122,10 @@ function! CleverTab()
       return "\<C-X>\<C-O>"
    endif
 endfunction
+
+command! FixNewLines :%s//\r/g
 "inoremap <Tab> <C-R>=CleverTab()<CR>
 "
 "
 cmap w!! %!sudo tee > /dev/null %
+colorscheme molokai
