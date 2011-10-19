@@ -135,3 +135,9 @@ command! FixNewLines :%s//\r/g
 "
 cmap w!! %!sudo tee > /dev/null %
 colorscheme molokai
+
+"FuzzyFinder
+noremap <silent> <C-]> :FufTagWithCursorWord!<CR>
+
+nmap ,b :FufBuffer<CR>
+nmap ,t :FufTaggedFile<CR>
