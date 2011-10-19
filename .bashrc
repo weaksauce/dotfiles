@@ -1,5 +1,5 @@
 export GEMSBIN=~/.gem/ruby/1.8/bin:/var/lib/gems/1.8/bin
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$GEMSBIN
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH:$GEMSBIN
 export PREFIX=""
 
 function isexe {
@@ -116,8 +116,6 @@ alias shtml='ack-grep --html'
 alias sjs='ack-grep --js'
 alias scss='ack-grep --css'
 alias ssass='ack-grep --sass'
-[ -e /Applications/MacVim.app/Contents/MacOS/Vim ] && alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vi=vim
 
 alias json="python -mjson.tool"
 

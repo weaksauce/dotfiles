@@ -1,3 +1,4 @@
 --type-set=sass=.scss
+--type-set=less=.less
 --color
 --group

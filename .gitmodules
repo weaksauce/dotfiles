@@ -26,3 +26,15 @@
 	path = .vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
 
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/phpcomplete"]
+	path = .vim/bundle/phpcomplete
+	url = https://github.com/shawncplus/phpcomplete.vim.git
+[submodule ".vim/plugin/vimroom"]
+	path = .vim/plugin/vimroom
+	url = https://github.com/mikewest/vimroom.git
+[submodule ".vim/bundle/vim-less"]
+	path = .vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git

@@ -53,7 +53,7 @@ let Tlist_Enable_Fold_Column = 0
 let Tlist_Auto_Update=1
 let Tlist_Highlight_Tag_On_BufEnter=1
 let Tlist_Show_One_File=1
-let Tlist_Sort_Type = "name"
+" let Tlist_Sort_Type = "name"
 let tlist_php_settings = 'php;c:class;d:constant;f:function'
 let tlist_planr_settings = 'planr;h:heading'
 let Tlist_Show_Menu=1
@@ -115,6 +115,10 @@ nmap <silent> <leader>r :TlistToggle<CR>
 map <leader>f :Ack<space>
 "nmap <silent> <leader>b :NERDTreeToggle<CR>
 
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_mru_files = 1
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+
 function! CleverTab()
    if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
       return "\<Tab>"
@@ -122,6 +126,8 @@ function! CleverTab()
       return "\<C-X>\<C-O>"
    endif
 endfunction
+
+nnoremap <silent> <Leader>v :VimroomToggle<CR>
 
 command! FixNewLines :%s//\r/g
 "inoremap <Tab> <C-R>=CleverTab()<CR>
