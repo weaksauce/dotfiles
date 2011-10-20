@@ -56,6 +56,8 @@ let Tlist_Show_One_File=1
 " let Tlist_Sort_Type = "name"
 let tlist_php_settings = 'php;c:class;d:constant;f:function'
 let tlist_planr_settings = 'planr;h:heading'
+let tlist_css_settings = 'css;f:definition'
+let tlist_scss_settings = 'scss;f:definition'
 let Tlist_Show_Menu=1
 let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_Close_On_Select=1
@@ -101,6 +103,7 @@ let g:user_zen_expandabbr_key = '<C-e>'
 let g:use_zen_complete_tag = 1
 
 map <leader>s :!./sync<CR>
+map <leader>c :!ctags -R<CR>
 se switchbuf=useopen
 map <silent><S-right>   :bn<cr>
 map <silent><S-left>    :bp<cr>
@@ -115,9 +118,7 @@ nmap <silent> <leader>r :TlistToggle<CR>
 map <leader>f :Ack<space>
 "nmap <silent> <leader>b :NERDTreeToggle<CR>
 
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_mru_files = 1
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.*
 
 function! CleverTab()
    if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
@@ -137,7 +138,11 @@ cmap w!! %!sudo tee > /dev/null %
 colorscheme molokai
 
 "FuzzyFinder
+let g:fuf_file_exclude="\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|*)($|[/\\])"
 noremap <silent> <C-]> :FufTagWithCursorWord!<CR>
-
 nmap ,b :FufBuffer<CR>
-nmap ,t :FufTaggedFile<CR>
+nmap ,t :FufCoverageFile<CR>
+nmap ,p :FufBufferTag<CR>
+call l9#defineVariableDefault('g:fuf_buffertag__php'       , '--language-force=php --php-types=f')
+call l9#defineVariableDefault('g:fuf_buffertag__css'       , '--language-force=css --css-types=f')
+call l9#defineVariableDefault('g:fuf_buffertag__scss'       , '--language-force=scss --scss-types=f')
