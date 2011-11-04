@@ -120,3 +120,5 @@ alias ssass='ack-grep --sass'
 alias json="python -mjson.tool"
 
 unset LC_CTYPE
+
+[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm

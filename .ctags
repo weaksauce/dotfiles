@@ -13,7 +13,7 @@
 --regex-planr=/^(\t| {4}){2}\[(.*)\]$/|         |--\2/h,subsubheading/
 --langdef=css
 --langmap=css:.css
---regex-css=/^(\w+)(\t| )*{/\1/f,definition/
+--regex-css=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/\1/f,definition/
 --langdef=scss
 --langmap=scss:.scss
---regex-scss=/^(.+)(\t| )*{/| \1/f,definition/
+--regex-scss=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/| \1/f,definition/

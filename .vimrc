@@ -137,11 +137,19 @@ command! FixNewLines :%s//\r/g
 cmap w!! %!sudo tee > /dev/null %
 colorscheme molokai
 
+" Ctrl-P
+"let g:ctrlp_map = '<leader>t'
+"let g:ctrlp_working_path_mode = 2
+"let g:ctrlp_match_window_bottom = 0
+"let g:ctrlp_match_window_reversed = 0
+"let g:ctrlp_dotfiles = 0
+"let g:ctrlp_user_command = "find %s -type f -not -path '*/lib/*' -not -path '*/dooframework/*' '(' -name '*.html' -or -name '*.php' -or -name '*.scss' -or -name '*.js ')'"
+
 "FuzzyFinder
 let g:fuf_file_exclude="\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|*)($|[/\\])"
-noremap <silent> <C-]> :FufTagWithCursorWord!<CR>
 nmap ,b :FufBuffer<CR>
 nmap ,t :FufCoverageFile<CR>
+"nmap ,t :FufTaggedFile<CR>
 nmap ,p :FufBufferTag<CR>
 call l9#defineVariableDefault('g:fuf_buffertag__php'       , '--language-force=php --php-types=f')
 call l9#defineVariableDefault('g:fuf_buffertag__css'       , '--language-force=css --css-types=f')
