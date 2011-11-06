@@ -24,14 +24,13 @@ set guifont=Courier_New:h9
 set backupdir=~/.vimbackup
 set background=dark
 let mapleader = ","
-"set mouse=a
 set wildignore=.git,.svn
-"colorscheme molokai
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-colorscheme railscasts
-
-
 set t_Co=256
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+colorscheme railscasts
 
 call pathogen#runtime_append_all_bundles()
 
@@ -53,7 +52,6 @@ let Tlist_Enable_Fold_Column = 0
 let Tlist_Auto_Update=1
 let Tlist_Highlight_Tag_On_BufEnter=1
 let Tlist_Show_One_File=1
-" let Tlist_Sort_Type = "name"
 let tlist_php_settings = 'php;c:class;d:constant;f:function'
 let tlist_planr_settings = 'planr;h:heading'
 let tlist_css_settings = 'css;f:definition'
@@ -62,10 +60,6 @@ let Tlist_Show_Menu=1
 let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_Close_On_Select=1
 let Tlist_Compact_Format=1
-
-" pasting that doesnt suck
-imap <D-v> <C-O>:set paste<CR><C-r>*<C-O>:set nopaste<CR>
-
 
 " custom filetypes
 au BufRead,BufNewFile *.plan set filetype=planr
@@ -104,6 +98,7 @@ let g:use_zen_complete_tag = 1
 
 map <leader>s :!./sync<CR>
 map <leader>c :!ctags -R<CR>
+map <leader>q :bd<CR>
 se switchbuf=useopen
 map <silent><S-right>   :bn<cr>
 map <silent><S-left>    :bp<cr>
@@ -120,30 +115,9 @@ map <leader>f :Ack<space>
 
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.*
 
-function! CleverTab()
-   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-      return "\<Tab>"
-   else
-      return "\<C-X>\<C-O>"
-   endif
-endfunction
-
-nnoremap <silent> <Leader>v :VimroomToggle<CR>
-
 command! FixNewLines :%s//\r/g
-"inoremap <Tab> <C-R>=CleverTab()<CR>
-"
-"
 cmap w!! %!sudo tee > /dev/null %
 colorscheme molokai
-
-" Ctrl-P
-"let g:ctrlp_map = '<leader>t'
-"let g:ctrlp_working_path_mode = 2
-"let g:ctrlp_match_window_bottom = 0
-"let g:ctrlp_match_window_reversed = 0
-"let g:ctrlp_dotfiles = 0
-"let g:ctrlp_user_command = "find %s -type f -not -path '*/lib/*' -not -path '*/dooframework/*' '(' -name '*.html' -or -name '*.php' -or -name '*.scss' -or -name '*.js ')'"
 
 "FuzzyFinder
 let g:fuf_file_exclude="\v\~$|\.(o|exe|dll|bak|orig|sw[po])$|(^|[/\\])\.(hg|git|bzr|*)($|[/\\])"
@@ -154,3 +128,9 @@ nmap ,p :FufBufferTag<CR>
 call l9#defineVariableDefault('g:fuf_buffertag__php'       , '--language-force=php --php-types=f')
 call l9#defineVariableDefault('g:fuf_buffertag__css'       , '--language-force=css --css-types=f')
 call l9#defineVariableDefault('g:fuf_buffertag__scss'       , '--language-force=scss --scss-types=f')
+
+"Syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+
