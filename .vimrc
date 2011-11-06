@@ -136,6 +136,12 @@ let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_balloons=1
 
+"EasyMotion
 let g:EasyMotion_leader_key = '<Leader>m'
+let g:EasyMotion_mapping_t  = '<Leader>w'
 
+"ZendCodeAnalyzer
 let g:zcaprg = 'zca'
+
+" Gundo
+nnoremap <Leader>g :GundoToggle<CR>
