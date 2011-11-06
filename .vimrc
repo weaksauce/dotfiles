@@ -145,3 +145,8 @@ let g:zcaprg = 'zca'
 
 " Gundo
 nnoremap <Leader>g :GundoToggle<CR>
+
+let g:autotagVerbosityLevel=0
+
+" YankRing
+nnoremap <Leader>y :YRShow<CR>
