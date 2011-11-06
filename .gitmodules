@@ -1,6 +1,6 @@
 [submodule ".vim/bundle/colorizer"]
-    path = .vim/bundle/colorizer
-    url = https://github.com/lilydjwg/colorizer.git
+	path = .vim/bundle/colorizer
+	url = https://github.com/lilydjwg/colorizer
 
 [submodule ".vim/bundle/minibufexpl.vim"]
     path = .vim/bundle/minibufexpl.vim
