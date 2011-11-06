@@ -98,7 +98,8 @@ let g:use_zen_complete_tag = 1
 
 map <leader>s :!./sync<CR>
 map <leader>c :!ctags -R<CR>
-map <leader>q :bd<CR>
+map <leader>x :bd<CR>
+map <leader>q :qa<CR>
 se switchbuf=useopen
 map <silent><S-right>   :bn<cr>
 map <silent><S-left>    :bp<cr>
@@ -133,4 +134,8 @@ call l9#defineVariableDefault('g:fuf_buffertag__scss'       , '--language-force=
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_balloons=1
 
+let g:EasyMotion_leader_key = '<Leader>m'
+
+let g:zcaprg = 'zca'

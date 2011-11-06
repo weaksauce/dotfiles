@@ -35,3 +35,13 @@
 [submodule ".vim/bundle/syntastic.orig"]
 	path = .vim/bundle/syntastic.orig
 	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git@github.com:folke/syntastic.git
+[submodule ".vim/bundle/easymotion"]
+    path = .vim/bundle/easymotion
+    url = https://github.com/Lokaltog/vim-easymotion.git
+
+[submodule ".vim/bundle/zca"]
+    path = .vim/bundle/zca
+    url = git@github.com:folke/vim-zendcodeanalyzer.git
