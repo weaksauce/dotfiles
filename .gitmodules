@@ -39,5 +39,8 @@
     path = .vim/bundle/easymotion
     url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule ".vim/bundle/zca"]
-    path = .vim/bundle/zca
-    url = git@github.com:folke/vim-zendcodeanalyzer.git
+	path = .vim/bundle/zca
+	url = git@github.com:folke/vim-zendcodeanalyzer.git
+[submodule ".vim/bundle/vim-zendcodeanalyzer"]
+	path = .vim/bundle/vim-zendcodeanalyzer
+	url = git@github.com:folke/vim-zendcodeanalyzer.git
