@@ -15,6 +15,7 @@
 * ```<C-Space>``` Intelligent Omni Completion
 * ```<C-e>``` Zen Coding Expand Abbreviation
 * ```<Leader>z``` Zend Code Analyzer
+* ```<tab>``` Activate Snippet
 
 ### Editing
 * ```<Leader>y``` Show YankRing
@@ -51,6 +52,7 @@
 * [vim-zendcodeanalyzer](git@github.com:folke/vim-zendcodeanalyzer.git) Use the Zend Code Analyzer for PhP syntax checking from vim
 * [yankring](https://github.com/chrismetcalf/vim-yankring.git) paste history support
 * [zencoding-vim]()
+* [UltiSnips](https://github.com/rygwdn/ultisnips) Snippets
 
 
 

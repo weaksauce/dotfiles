@@ -150,3 +150,6 @@ let g:autotagVerbosityLevel=0
 
 " YankRing
 nnoremap <Leader>y :YRShow<CR>
+
+" UltiSnips
+let g:UltiSnipsListSnippets="<c-s>"
