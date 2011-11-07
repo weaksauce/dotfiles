@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/rygwdn/ultisnips.git
+[submodule ".vim/bundle/hammer"]
+	path = .vim/bundle/hammer
+	url = https://github.com/robgleeson/hammer.vim.git
