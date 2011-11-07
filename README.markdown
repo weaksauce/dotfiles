@@ -18,7 +18,7 @@ The default map leader `,` can be changed in your `.vimrc`, by setting:
 
 ### Coding
 * `<C-Space>` Intelligent Omni Completion
-* `<C-e>` Zen Coding Expand Abbreviation ([ZenCoding](https://github.com/mattn/zencoding-vim.git))
+* `<C-y>` Zen Coding Expand Abbreviation ([ZenCoding](https://github.com/mattn/zencoding-vim.git))
 * `<Leader>z` Use the Zend Code Analyzer for PhP syntax checking ([vim-zendcodeanalyzer](git@github.com:folke/vim-zendcodeanalyzer.git))
 * `<tab>` Activate Snippet ([UltiSnips](https://github.com/rygwdn/ultisnips))
 
@@ -27,7 +27,7 @@ The default map leader `,` can be changed in your `.vimrc`, by setting:
 * `<Leader>y` Show [YankRing](https://github.com/chrismetcalf/vim-yankring.git)
 * `p` Paste last entry from paste buffer
 * `<C-p>` Cycle though older entries in paste buffer ([YankRing](https://github.com/chrismetcalf/vim-yankring.git))
-* `%` Find matching brackets, tags, … ([Matchit]())
+* `%` Find matching brackets, tags, … ([Matchit](https://github.com/edsono/vim-matchit))
 
 ### General
 * `<Leader>q` Quit Vim
@@ -49,8 +49,8 @@ The default map leader `,` can be changed in your `.vimrc`, by setting:
 ## Invisible Super Heroes
 * [PhpComplete](https://github.com/shawncplus/phpcomplete.vim.git) Fixes omni completion for PhP
 * [Syntastic](git@github.com:folke/syntastic.git) Syntax Checking for a variety of file types when saving
-* [AutoTag]() Automagically updates your tags file
-* [delimitMate]() Automatically add closing brackets
+* [AutoTag](https://github.com/folke/AutoTag) Automagically updates your tags file
+* [delimitMate](https://github.com/Raimondi/delimitMate) Automatically add closing brackets
 
 ## File Types
 * [sass]()
