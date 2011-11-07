@@ -93,7 +93,7 @@ inoremap <expr> <C-Space> pumvisible() ? '<C-n>' :
 
 imap <C-@> <C-Space>
 
-let g:user_zen_expandabbr_key = '<C-e>'
+let g:user_zen_expandabbr_key = '<C-y>'
 let g:use_zen_complete_tag = 1
 
 map <leader>s :!./sync<CR>

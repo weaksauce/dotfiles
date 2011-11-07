@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/hammer"]
 	path = .vim/bundle/hammer
 	url = https://github.com/robgleeson/hammer.vim.git
+[submodule ".vim/bundle/zencoding"]
+	path = .vim/bundle/zencoding
+	url = https://github.com/mattn/zencoding-vim.git
