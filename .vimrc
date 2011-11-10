@@ -135,6 +135,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_balloons=1
+let g:syntastic_disabled_filetypes = ['html']
 
 "EasyMotion
 let g:EasyMotion_leader_key = '<Leader>m'
@@ -153,3 +154,5 @@ nnoremap <Leader>y :YRShow<CR>
 
 " UltiSnips
 let g:UltiSnipsListSnippets="<c-s>"
+
+let g:pad_dir="~/notes"
