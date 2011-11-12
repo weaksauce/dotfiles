@@ -2,7 +2,7 @@
 Below you can find an overview of all the Vim goodness packed in the vim dotfiles.
 
 ## Cheat Sheet
-The default map leader `,` can be changed in your `.vimrc`, by setting:
+The default map leader `\` can be changed to `,` in your `.vimrc`, by setting:
 	let mapleader = ","
 
 ### Navigation
