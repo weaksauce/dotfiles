@@ -65,6 +65,7 @@ let Tlist_Compact_Format=1
 au BufRead,BufNewFile *.plan set filetype=planr
 au BufRead,BufNewFile *.todo set filetype=planr
 au BufRead,BufNewFile *.json set filetype=json
+autocmd FileType html set ft=doo
 au BufRead,BufNewFile *.md set filetype=markdown
 
 set splitright

@@ -67,23 +67,24 @@ fi
 unset color_prompt force_color_prompt
 
 function _git_prompt() {
-    local git_status="`git status -unormal 2>&1`"
-    if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
-        if [[ "$git_status" =~ nothing\ to\ commit ]]; then
+    [ -d .git ] || return
+    [ "$(pwd)" = "$(echo ~)" ] && return
+
+    local git_status="`git status --porcelain 2> /dev/null`"
+    if [ $? -eq 0 ] ; then
+        git_status=$(echo "$git_status" | cut -c-3 | uniq -c | sed 's/ *\([0-9]*\) *\([A-Z?]*\)/\2\1/' | sed 's/\?\?/U/' | xargs echo -n)
+        if [[ "$git_status" =  "1" ]]; then
             local ansi=42
-        elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-            local ansi=43
-        else
+            git_status=" "
+        elif [[ "$git_status" =~ M ]]; then
             local ansi=45
-        fi
-        if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
-            branch=${BASH_REMATCH[1]}
-            test "$branch" != master || branch=' '
         else
-            # Detached HEAD.  (branch=HEAD is a faster alternative.)
-            branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
-                echo HEAD`)"
+            local ansi=43
         fi
+        # Detached HEAD.  (branch=HEAD is a faster alternative.)
+        branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
+            echo HEAD`)"
+        [ "$branch" = '(master)' ] && branch="$git_status" || branch="$branch $git_status"
         echo -n '\[\e[0;37;'"$ansi"';1m\]'"$branch"'\[\e[0m\] '
     fi
 }

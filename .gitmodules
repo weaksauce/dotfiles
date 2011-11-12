@@ -61,3 +61,9 @@
 [submodule ".vim/bundle/matchit"]
 	path = .vim/bundle/matchit
 	url = https://github.com/edsono/vim-matchit.git
+[submodule ".vim/bundle/session"]
+	path = .vim/bundle/session
+	url = https://github.com/xolox/vim-session.git
+[submodule ".vim/bundle/doo"]
+	path = .vim/bundle/doo
+	url = git@github.com:folke/vim-doo.git
